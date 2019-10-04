@@ -1,4 +1,4 @@
-package com.lingfeng.rule.languagereference;
+package com.lingfeng.rules.languagereference;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

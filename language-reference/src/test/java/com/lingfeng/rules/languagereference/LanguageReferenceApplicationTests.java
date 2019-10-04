@@ -1,4 +1,4 @@
-package com.lingfeng.rule.languagereference;
+package com.lingfeng.rules.languagereference;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

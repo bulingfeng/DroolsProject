@@ -1,0 +1,11 @@
+package  com.test.helloworld
+
+import com.lingfeng.rules.languagereference.entity.Message
+
+rule "Hello World"
+  when
+    m : Message( status == "hi")
+  then
+   System.out.println("执行成功");
+   m.setMessage("good-bye");
+end
