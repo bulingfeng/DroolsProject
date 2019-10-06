@@ -35,7 +35,9 @@ public class UseRuleStr {
         String myRule1 = "package rules rule \"Hello World 2\" when eval(true) then System.out.println(\"Test, Drools!\"); end";
         KieServices kieServices = KieServices.Factory.get();
         KieFileSystem kfs = kieServices.newKieFileSystem();
-        kfs.write("src/main/resources/rules/" + "test.drl", myRule1.getBytes("UTF-8"));
+        // 个人认为这个只是吧标识 在内存中的一个标识
+        kfs.write("/Users", myRule1.getBytes("UTF-8"));
+        System.out.println("从路径里面读取的数据为"+new String(kfs.read("/Users")));
         KieBuilder kieBuilder = kieServices.newKieBuilder(kfs).buildAll();
         if (kieBuilder.getResults().getMessages(Message.Level.ERROR).size() > 0) {
             throw new RuntimeException(kieBuilder.getResults().getMessages().toString());
