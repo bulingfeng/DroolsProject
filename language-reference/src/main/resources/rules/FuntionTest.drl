@@ -1,0 +1,14 @@
+package com.lingfeng.functionTest
+
+import com.lingfeng.rules.languagereference.entity.Function
+
+function String hello(String applicantName) {
+    return "Hello " + applicantName + "!";
+}
+
+rule "Using a function"
+  when
+    $function:Function(ifFunction == true)
+  then
+    System.out.println( hello( "this is a function" ) );
+end

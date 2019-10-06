@@ -11,12 +11,12 @@ import org.kie.api.runtime.KieSession;
  */
 public class HelloWorld {
     public static void main(String[] args) {
-        // load up the knowledge base
+        // 获取无状态的KieSession
         KieServices ks = KieServices.Factory.get();
         KieContainer kContainer = ks.getKieClasspathContainer();
         KieSession kSession = kContainer.newKieSession("rulesSession");
 
-        // go !
+        // 执行规则
         Message message = new Message();
         message.setMessage("Hello World");
         message.setStatus("hi");

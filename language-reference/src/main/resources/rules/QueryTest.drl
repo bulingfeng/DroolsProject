@@ -1,0 +1,11 @@
+
+package com.lingfeng.queryTest
+
+import com.lingfeng.rules.languagereference.entity.Person
+query "people under the age of 21"
+    $person : Person( age < 21 )
+end
+
+query "over30"
+    $person : Person( age > 30 )
+end
