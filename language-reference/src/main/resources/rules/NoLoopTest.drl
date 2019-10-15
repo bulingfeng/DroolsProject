@@ -1,0 +1,20 @@
+package  com.lingfeng.noloop
+import com.lingfeng.rules.languagereference.entity.NoLoopEntity
+
+rule "noloopTest-1"
+no-loop true
+when
+    $noLoop:NoLoopEntity(isExe==true)
+then
+    System.out.println("no-loop 执行了");
+    update($noLoop)
+end
+// 下面会重复执行造成死循环
+//rule "noloopTest-2"
+//no-loop true
+//when
+//    $noLoop:NoLoopEntity(isExe==true)
+//then
+//    System.out.println("no-loop 执行了");
+//    update($noLoop)
+//end

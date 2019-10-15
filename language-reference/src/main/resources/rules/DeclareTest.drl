@@ -1,0 +1,16 @@
+/**
+declare其实就是可以代替在java中声明对象 drl文件里面也可以
+**/
+declare Person
+  name : String
+  dateOfBirth : java.util.Date
+end
+
+rule "Using a declared type"
+  when
+    eval(true)
+  then
+    Person mark = new Person();
+    mark.setName( "Mark" );
+    System.out.println("declare is running");
+end

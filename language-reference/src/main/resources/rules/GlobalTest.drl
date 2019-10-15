@@ -1,0 +1,19 @@
+/**
+一般情况下不要使用全局变量
+Do not use global variables to establish conditions in rules unless a global variable has a constant immutable value. Global variables are not inserted into the working memory of the Drools engine, so the Drools engine cannot track value changes of variables.
+
+Do not use global variables to share data between rules. Rules always reason and react to the working memory state, so if you want to pass data from rule to rule, assert the data as facts into the working memory of the Drools engine.
+简单的说明就是：
+1：不要使用全局变量，除非能保证他是不变的常量，而且全局变量不会插入到内容工作流，不能够插件变量的变化
+2：不要使用全局变量分享数据,建议使用fact来做数据的分享。
+**/
+
+//
+//global java.util.List myGlobalList;
+//
+//rule "Using a global"
+//  when
+//    // Empty
+//  then
+//    myGlobalList.add( "My global list" );
+//end
