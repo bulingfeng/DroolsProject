@@ -1,0 +1,19 @@
+package com.lingfeng.activicationGroupTest
+
+import com.lingfeng.rules.languagereference.entity.Message
+
+rule "activicationGroup-rule-1"
+    activation-group "activicationGroup-1"
+when
+    Message(message=="ActivicationGroup")
+then
+    System.out.println("activicationGroup-rule-1 is running");
+end
+
+rule "activicationGroup-rule-2"
+    activation-group "activicationGroup-1"
+when
+    Message(message=="ActivicationGroup")
+then
+    System.out.println("activicationGroup-rule-2 is running");
+end

@@ -1,0 +1,19 @@
+package com.lingfeng.enabledTest
+
+import com.lingfeng.rules.languagereference.entity.Message
+
+rule "enabledTest-rule-1"
+    enabled true
+when
+    Message(message=="enabled")
+then
+    System.out.println("enabled-rule-1 is running");
+end
+// ------
+rule "enabledTest-rule-2"
+    enabled false
+when
+    Message(message=="enabled")
+then
+    System.out.println("enabled-rule-2 is running");
+end

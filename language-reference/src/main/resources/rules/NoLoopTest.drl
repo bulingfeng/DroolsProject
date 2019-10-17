@@ -6,15 +6,15 @@ no-loop true
 when
     $noLoop:NoLoopEntity(isExe==true)
 then
-    System.out.println("no-loop 执行了");
+    System.out.println("no-loop-1 执行了");
     update($noLoop)
 end
-// 下面会重复执行造成死循环
-//rule "noloopTest-2"
-//no-loop true
-//when
-//    $noLoop:NoLoopEntity(isExe==true)
-//then
-//    System.out.println("no-loop 执行了");
-//    update($noLoop)
-//end
+ //下面会重复执行造成死循环
+rule "noloopTest-2"
+no-loop true
+when
+    $noLoop:NoLoopEntity(isExe==true)
+then
+    System.out.println("no-loop-2 执行了");
+    update($noLoop)
+end

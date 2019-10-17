@@ -1,0 +1,27 @@
+package com.lingfeng.agendaGroupTest
+
+import com.lingfeng.rules.languagereference.entity.Message
+
+rule "agendaGroup-rule-1"
+    agenda-group "agendaGroup-1"
+when
+    Message(message=="AgendaGroupRule")
+then
+    System.out.println("AgendaGroupRule-1 is running");
+end
+
+rule "agendaGroup-rule-2"
+    agenda-group "agendaGroup-1"
+when
+    Message(message=="AgendaGroupRule")
+then
+    System.out.println("AgendaGroupRule-2 is running");
+end
+
+rule "agendaGroup-rule-3"
+    agenda-group "agendaGroup-2"
+when
+    Message(message=="AgendaGroupRule")
+then
+    System.out.println("AgendaGroupRule-3 is running");
+end
